@@ -1,0 +1,59 @@
+body {
+    background-color: #F0F8FF;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.flexSec {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.rodape {
+    display: flex;
+    column-gap: 20px;
+    padding: 15px;
+    background-color: #38444d;
+}
+
+.rodape{
+    color: #FFF;
+}
+
+.rodape, h2 {
+    font-size: 30px;
+}
+
+.rodape{
+    font-size: 10px;
+}
+
+.mapa {
+    width: 400px;
+    height: 300px;
+    border: 0;
+    border-radius: 10px ;
+}
+
+.divEsq {
+    padding: 10px;
+    padding-left: 60px;
+    width: 33%;
+}
+
+.divEsq{
+    font-size: 20px;
+}
+
+.divDir {
+    padding: 10px;
+    left: 84%;
+    width: 70%;
+    text-align: right;
+}
+
+.divMap {
+    padding-left: 60px;
+}
