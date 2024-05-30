@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="loginStyle.css">
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-    <script src="common_dados.js"></script>
+    <script src="common_dados_login_perfil.js"></script>
 </head>
 
 <body>
@@ -140,8 +140,8 @@
 
         for (const user of data.results) {
             if (user.email === input_email && user.senha === input_senha && user.tipo_conta === 'aluno') {
+                localStorage.setItem('usuario', JSON.stringify(user));
                 window.location.href = "./perfil_aluno.html";
-
                 return;
             }
         }
