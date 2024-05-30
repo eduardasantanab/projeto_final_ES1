@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="loginStyle.css">
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script src="common_dados.js"></script>
 </head>
 
 <body>
@@ -102,6 +103,8 @@
 </body>
 
 <script>
+
+
     const urlBase = "https://parseapi.back4app.com/classes/Login";
     let data = [];
 
@@ -123,6 +126,7 @@
 
         for (const user of data.results) {
             if (user.email === input_email && user.senha === input_senha && user.tipo_conta === 'professor') {
+                localStorage.setItem('usuario', JSON.stringify(user));
                 window.location.href = "./perfil_professor.html";
                 return;
             }
@@ -137,6 +141,7 @@
         for (const user of data.results) {
             if (user.email === input_email && user.senha === input_senha && user.tipo_conta === 'aluno') {
                 window.location.href = "./perfil_aluno.html";
+
                 return;
             }
         }

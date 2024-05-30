@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="pt-br">
 <head>
     <title>Colégio Interestelar</title>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="indexStyle.css">
+    <script src="common_dados.js"></script>
 </head>
 
 <body>
@@ -70,7 +71,11 @@
     <div class="container rounded bg-white mb-5">
         <div class="row">
             <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="images/sobreEscola/professor-dando-aula2.jpeg"><span class="font-weight-bold">Iago Carvalho</span><span class="text-black-50">iago.carvalho@interestelar.com</span><span>67 anos</span></div>
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="images/sobreEscola/professor-dando-aula2.jpeg">
+                    <span class="font-weight-bold" id = "nome_sobrenome" >Iago Carvalho</span>
+                    <span class="text-black-50" id = "email">iago.carvalho@interestelar.com</span>
+                </div>
             </div>
             <div class="col-md-5 border-right">
                 <div class="p-3 py-5">
@@ -78,24 +83,24 @@
                         <h4 class="text-right">Informações do Perfil</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Nome</label><div class="form-control" placeholder="Primeiro nome" value="">Iago</div></div>
-                        <div class="col-md-6"><label class="labels">Sobrenome</label><div class="form-control" value="" placeholder="sobrenome">Carvalho</div></div>
+                        <div class="col-md-6"><label class="labels">Nome</label>
+                            <div class="form-control" placeholder="Primeiro nome" value="" id = "nome">Iago</div>
+                        </div>
+                        <div class="col-md-6"><label class="labels">Sobrenome</label>
+                            <div class="form-control" value="" placeholder="sobrenome" id = "sobrenome">Carvalho</div>
+                        </div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Endereço</label><div class="form-control" value="" placeholder="endreco">Rua Silva dos Santos,196</div></div>
-                        <div class="col-md-12"><label class="labels">CEP</label><div class="form-control" value="" placeholder="cep">47457000</div></div>
-                        <div class="col-md-12"><label class="labels">Matérias que leciona</label><div class="form-control" value="" placeholder="série">Física</div></div>
+                        <div class="col-md-12"><label class="labels">CPF</label>
+                            <div class="form-control" value="" placeholder="endreco" id = "cpf">123456789</div>
+                        </div>
+                        <div class="col-md-12"><label class="labels">CEP</label>
+                            <div class="form-control" value="" placeholder="cep" id = "cep">47457000</div>
+                        </div>
                     </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Editar</button></div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center experience"><span>Cursos e/ou aulas particulares que leciona</span></div><br>
-                    <div class="col-md-12"><label class="labels">Cursos</label><div class="form-control" value="" placeholder="Cursos em andamento">Libras</div> <br>
-                    <div class="col-md-12"><label class="labels">Aulas particulares</label><div class="form-control" value="" placeholder="Aulas particulares em andamento">Matemática</div></div>
-                </div>
-            </div>
+           
         </div>
     </div>
 
@@ -110,3 +115,18 @@
         crossorigin="anonymous"></script>
     <script src = "script.js"></script>
 </body>
+
+<script>
+    window.onload = async function() {
+        // Recupera as informações do usuário do localStorage
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        if (usuario) {
+            showDados(usuario.nome, usuario.sobrenome, usuario.cpf, usuario.cep, usuario.email);
+        } else {
+            // Usuário não está logado, redireciona para a página de login
+            window.location.href = "./login.html";
+        }
+    };
+</script>
+
+</html>
