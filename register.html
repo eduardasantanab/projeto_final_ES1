@@ -7,7 +7,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="loginStyle.css">
-
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 </head>
 
 <body>
@@ -71,12 +71,12 @@
                     <div class="col-md-6">
                         <label for="nome">Name:</label>
                         <br>
-                        <input type="nome" id="nome" name="nome" placeholder="Nome" required>
+                        <input type="nome" id="username" name="nome" placeholder="Nome" required>
                     </div>
                     <div class="col-md-6">
                         <label for="Sobrenome">Surname:</label>
                         <br>
-                        <input type="Sobrenome" id="Sobrenome" name="Sobrenome" placeholder="Sobrenome" required>
+                        <input type="Sobrenome" id="sobrenome" name="Sobrenome" placeholder="Sobrenome" required>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     <div class="col-md-6">
                         <label for="CEO">CEP:</label>
                         <br>
-                        <input type="CEO" id="CEO" name="CEO" placeholder="Usuário" required>
+                        <input type="CEO" id="CEP" name="CEO" placeholder="Usuário" required>
                     </div>
                 </div>
             </div>
@@ -127,11 +127,6 @@
                         <br>
                         <input type="password" id="password" name="password" placeholder="Senha" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="password">Repeat the password:</label>
-                        <br>
-                        <input type="password" id="password" name="password" placeholder="Senha" required>
-                    </div>
                 </div>
             </div>
 
@@ -139,40 +134,57 @@
             <br>
 
             <div class="center">
-                <a href="#" class="btn btn-outline-dark" id="criar_conta_btn" onclick="criarConta()" data-toggle="modal" data-target="#myModal">Criar conta</a>
+                <a href="#" class="btn btn-outline-dark" id="criar_conta_btn" data-toggle="modal" data-target="#myModal">Criar conta</a>
             </div>
-            <p id="texto_branco" style="color: rgb(4, 177, 4);"></p>
-
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header row center">
-                      <h5 class="modal-title" id="exampleModalLabel">cupom de desconto</h5>
-                      <img src="images/register/EO_LP_Cupom_Selo_P15.webp" alt="20%">
-                    </div>
-
-                    <div class="modal-body">
-                        Parabéns! Você recebeu um cupom de desconto de 15% na sua primeira compra. 
-                        <br>
-                        (Cupom válido até 15 dias).
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
         </form>
     </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="register.js"> </script>
-    <script src="login_script.js"></script>
 </body>
 
+<script>
+
+      // Initialize Parse
+      Parse.initialize("awPjmitwQWHohlqbzx3EoHaZBYn4ZZsAl1L2ZEvO", "5aw3fHuJKq9PHPhHhZYwpasW9uCUV4R8gEGXwLQI");
+      Parse.serverURL = "https://parseapi.back4app.com/";
+  
+      // Create a new User
+      async function createParseUser() {
+        // Creates a new Parse "User" object, which is created by default in your Parse app
+        let user = new Parse.User();
+        // Set the input values to the new "User" object
+        user.set("username", document.getElementById("username").value);
+        user.set("sobrenome", document.getElementById("sobrenome").value);
+        user.set("cpf", document.getElementById("CPF").value);
+        user.set("cep", document.getElementById("CEP").value);
+        user.set("email", document.getElementById("email").value);
+        user.set("tipo_conta", document.getElementById("tipo").value);
+        user.set("password", document.getElementById("password").value);
+        try {
+          // Call the save method, which returns the saved object if successful
+          user = await user.save();
+          if (user !== null) {
+            // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
+            alert(
+              `New object created with success! ObjectId: ${
+                user.id
+              }, ${user.get("username")}`
+            );
+          }
+        } catch (error) {
+          alert(`Error: ${error.message}`);
+        }
+      }
+  
+      // Add on click listener to call the create parse user function
+      document.getElementById("criar_conta_btn").addEventListener("click", async function () {
+        createParseUser();
+      });
+
+</script>
 
 </html>
