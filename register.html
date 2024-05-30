@@ -147,43 +147,48 @@
 </body>
 
 <script>
+    const url = "https://parseapi.back4app.com/classes/Login"
 
-      // Initialize Parse
-      Parse.initialize("awPjmitwQWHohlqbzx3EoHaZBYn4ZZsAl1L2ZEvO", "5aw3fHuJKq9PHPhHhZYwpasW9uCUV4R8gEGXwLQI");
-      Parse.serverURL = "https://parseapi.back4app.com/";
-  
-      // Create a new User
-      async function createParseUser() {
-        // Creates a new Parse "User" object, which is created by default in your Parse app
-        let user = new Parse.User();
-        // Set the input values to the new "User" object
-        user.set("username", document.getElementById("username").value);
-        user.set("sobrenome", document.getElementById("sobrenome").value);
-        user.set("cpf", document.getElementById("CPF").value);
-        user.set("cep", document.getElementById("CEP").value);
-        user.set("email", document.getElementById("email").value);
-        user.set("tipo_conta", document.getElementById("tipo").value);
-        user.set("password", document.getElementById("password").value);
+    async function postUser() {
+        const nome = document.getElementById("username").value
+        const sobrenome = document.getElementById("sobrenome").value
+        const cpf = document.getElementById("CPF").value
+        const cep = document.getElementById("CEP").value
+        const email = document.getElementById("email").value
+        const senha = document.getElementById("password").value
+        const tipo_conta = document.getElementById("tipo").value
+
         try {
-          // Call the save method, which returns the saved object if successful
-          user = await user.save();
-          if (user !== null) {
-            // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
-            alert(
-              `New object created with success! ObjectId: ${
-                user.id
-              }, ${user.get("username")}`
-            );
-          }
+            const response = await fetch(url, {
+                method: "POST", // *GET, POST, PUT, DELETE, etc.
+                mode: "cors", // no-cors, *cors, same-origin
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Parse-Application-Id": "awPjmitwQWHohlqbzx3EoHaZBYn4ZZsAl1L2ZEvO",
+                    "X-Parse-REST-API-Key": "PoLLLNspCNEePQ7KYev4TNR9lMVJ8we60eeBOtQ9"
+                },
+                body: JSON.stringify({
+                    nome: nome,
+                    sobrenome : sobrenome,
+                    cpf : cpf,
+                    cep : cep,
+                    email : email, 
+                    senha : senha, 
+                    tipo_conta : tipo_conta
+                }), // body data type must match "Content-Type" header
+            });
+
+            const data = await response.json();
+            console.log("data", data);
         } catch (error) {
-          alert(`Error: ${error.message}`);
+            console.log(error)
         }
-      }
-  
-      // Add on click listener to call the create parse user function
-      document.getElementById("criar_conta_btn").addEventListener("click", async function () {
-        createParseUser();
-      });
+
+    }
+
+    document.getElementById("criar_conta_btn").addEventListener("click", async function () {
+        postUser();
+    });
 
 </script>
 
