@@ -1,0 +1,24 @@
+{
+  "name": "projeto_final_es1",
+  "version": "1.0.0",
+  "description": "proj es1",
+  "main": "busca_livros.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardasantanab/projeto_final_ES1.git"
+  },
+  "keywords": [
+    "escola",
+    "livraria",
+    "back4app"
+  ],
+  "author": "pedro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardasantanab/projeto_final_ES1/issues"
+  },
+  "homepage": "https://github.com/eduardasantanab/projeto_final_ES1#readme"
+}
