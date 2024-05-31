@@ -1,15 +1,14 @@
+
+
 <!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <title>Biblioteca</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,
-    initial-scale=1, shrink-to-fit=no">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="servicosStyle.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,526 +28,54 @@
                     <a href="sobre_escola.html#rodape">contato</a>
                 </div>
             </li>
-
-
             <li class="my_dropdown">
                 <a href="sobre_biblioteca.html" class="my_dropbtn">Biblioteca</a>
-
                 <div class="my_dropdown-content">
                     <a href="sobre_biblioteca.html">Sobre</a>
                     <a href="livros.html">Livros</a>
                 </div>
             </li>
-
-
             <li class="my_dropdown">
                 <a href="produtos.html" class="my_dropbtn">Produtos</a>
                 <div class="my_dropdown-content">
                     <a href="produtos.html">Materiais</a>
                 </div>
             </li>
-
-
-            <li class="my_dropdown"> 
+            <li class="my_dropdown">
                 <a href="servicos.html" class="my_dropbtn">Serviços</a>
-                <div class="my_dropdown-content"> 
+                <div class="my_dropdown-content">
                     <a href="servicos.html#cursos">Cursos</a>
                     <a href="servicos.html#aulas_particulares">Aulas particulares</a>
                 </div>
-            </li> 
-
+            </li>
             <li class="my_dropdown">
                 <a href="login.html" class="my_dropbtn">Login</a>
             </li>
-
         </ul>
     </article>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
 
-    <nav class="container  bg-body-tertiary row justify-content-md-center">
+    <nav class="container bg-body-tertiary row justify-content-md-center">
         <div class="d-flex w-auto p3">
             <form class="d-flex forms-container" role="search">
-                <input class="form-control me-3 box-c" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-3 box-c" type="search" placeholder="Search" aria-label="Search"
+                    id="search_string">
+                <button class="btn btn-outline-success" type="submit" id="search_button">Search</button>
             </form>
             <span class="mt-2 px-md-5" style="font-size: 20px;">Qual livro você está procurando?</span>
         </div>
     </nav>
-    <div class="output-container"></div>
+    <div id="livros-container" class="d-flex flex-row offset-md-1"></div>
 
-    <div class="d-flex flex-row offset-md-1">
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/a_hora_da_estrela.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">A hora da estrela</h5>
-                    <p class="card-text">R$ 124,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#a_hora_da_estrela">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/dom_casmurro.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Dom casmurro</h5>
-                    <p class="card-text">R$ 24,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dom_casmurro">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/macunaima.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Macunaíma</h5>
-                    <p class="card-text">R$ 38,00</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#macunaima">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="d-flex flex-row offset-md-1">
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/memorias_postumas_de_bras_cubas.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Memórias póstumas de Brás Cubas</h5>
-                    <p class="card-text">R$ 24,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#memorias_postumas_de_bras_cubas">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/menino_de_engenho.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Menino de Engenho</h5>
-                    <p class="card-text">R$ 65,00</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#menino_de_engenho">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/morte_e_vida_severina.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Morte e vida Severina</h5>
-                    <p class="card-text">R$ 79,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#morte_e_vida_severina">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    <div class="d-flex flex-row offset-md-1">
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/o_cortico.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">O cortiço</h5>
-                    <p class="card-text">R$ 29,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#o_cortico">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/os_sertoes.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Os sertões</h5>
-                    <p class="card-text">R$ 34,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#os_sertoes">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/senhora.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Senhora</h5>
-                    <p class="card-text">R$ 29,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#senhora">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row offset-md-1">
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/triste_fim_de_policarpo_quaresma.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Triste fim de Policarpo Quaresma</h5>
-                    <p class="card-text">R$ 49,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#triste_fim_de_policarpo_quaresma">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/o_menino_maluquinho.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">O Menino Maluquinho</h5>
-                    <p class="card-text">R$ 59,90</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#o_menino_maluquinho">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="card" style="width: 18rem;">
-                <img src="images/livros/o_cao_sem_plumas.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">O Cão Sem Plumas</h5>
-                    <p class="card-text">R$ 42,50</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#o_cao_sem_plumas">
-                        Compra/Emprestimo
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="a_hora_da_estrela" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="a_hora_da_estrela">A hora da Estrela</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/a_hora_da_estrela.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        É o último romance da escritora brasileira Clarice Lispector, publicado em 1977. Trata-se de uma obra instigante e original, de cunho autobiográfico, pertencente à Terceira Geração Modernista. <br>
-                        É classificada como um romance intimista, também conhecido como romance psicológico, estilo em que a autora se destaca. Afinal, a obra de Clarice é marcada por suas emoções e sentimentos pessoais.
-                    </p>
-                    <p>R$124,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="dom_casmurro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="dom_casmurro">Dom Casmurro</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/dom_casmurro.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira. <br> Nas páginas deste romance, encontra-se a versão de um homem perturbado pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura brasileira.
-                    </p>
-                    <p>R$24,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="macunaima" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Macunaíma</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="images/livros/macunaima.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Obra-prima do Modernismo brasileiro, Macunaíma foi escrito por Mário de Andrade em 1928 e ainda hoje é um livro fundamental para compreendermos nossa diversidade cultural. Nasceu a partir de uma vasta pesquisa linguística do autor e reflete, por meio da mistura de lendas, mitos e histórias populares, a busca de uma identidade nacional afastada pela colonização. "Brasileiros, chegou a hora de realizar o Brasil". dizia o criador do anti - herói nascido na selva amazônica e transformado em um dos personagens mais estudados de todos os tempos no país.
-                    </p>
-                    <p>R$38,00</p>                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="memorias_postumas_de_bras_cubas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Memórias Póstumas de Brás Cubas</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/memorias_postumas_de_bras_cubas.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Não tive filhos, não transmiti a nenhuma criatura o legado da nossa miséria. Com essas palavras, o narrador de Memórias Póstumas de Brás Cubas resume a sua vida. O tom assumido na obra, bem como as técnicas empregadas na composição romanesca, são alguns dos fatores que justificam o lugar de Machado de Assis entre os maiores escritores do século XIX. <br> Neste romance repleto de digressões filosóficas, o escritor se vale da posição privilegiada de Brás Cubas, que, como defunto autor, narra as suas desventuras e revela as contradições da sociedade brasileira do século XIX, por meio de uma análise aprofundada de seus personagens.
-                    </p>
-                    <p>R$ 24,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="menino_de_engenho" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Menino de Engenho</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/menino_de_engenho.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        <strong>Primeiro romance de de José Lins do Rego, Menino de engenho é narrativa cativante composta pelas aventuras e desventuras da meninice de Carlos. A trama revela a grandeza literária de seu autor, que compõe, com minúcia e de forma magistral, as alegrias, inquietações e angústias do menino diante de sensações e situações por ele vivenciadas pela primeira vez. </strong> <br> Publicado pela primeira vez em 1932, o livro comprova, sem sombra de dúvidas, o talento monumental de um escritor, cuja obra nortearia os rumos do moderno regionalismo brasileiro. <br> A edição ora publicada pela Global marca o ingresso do autor em sua nova casa editorial. O projeto gráfico de capa e a ilustração são de Mauricio Negro. O livro traz um texto de apresentação do Prof. João Cezar de Castro Rocha, professor titular de Literatura Comparada da UERJ, especialmente encomendado para esta edição.
-                    </p>
-                    <p>R$ 65,00</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="morte_e_vida_severina" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Morte e Vida Severina</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/morte_e_vida_severina.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        <strong>Publicado pela primeira vez há sessenta anos, o poema mais conhecido de João Cabral mudou os rumos da poesia no Brasil.</strong>
-                        <br>
-                        Um dos poemas mais populares de João Cabral de Melo Neto, "Morte e vida severina" dá voz aos retirantes nordestinos e ao rio Capibaripe, em cenas fortes e contundentes. Clara crítica social, o autor descreve a viagem de um sertanejo chamado Severino, que sai de sua terra natal em busca de melhores condições de vida. Durante a jornada, Severino se encontra tantas vezes com a Morte que, desiludido e impotente, percebe que a luta é inútil ― como ele, tantos outros severinos padecem com a miséria e o abandono. Apenas o nascimento de um bebê, uma criança-severina, renova as esperanças e o espírito cansado daquele que já não tinha motivos para continuar a viver.
-                        <br>
-                        Com apresentação de Antonio Carlos Secchin, depoimento de Chico Buarque e texto de Alceu Amoroso Lima.
-                    </p>
-                    <p>R$ 79,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="o_cortico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">O Cortiço</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/o_cortico.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Pobreza, corrupção, injustiça, traição são elementos integram O cortiço, principal obra do Naturalismo brasileiro. Nela, Aluísio Azevedo denuncia as mazelas sociais enfrentadas pelos moradores de um cortiço no Rio de Janeiro no século XIX. É um romance que convida a analisar por meio da observação crítica do cotidiano das personagens a animalização do ser humano, questão que se mostra, mais do que nunca, atual.
-                    </p>
-                    <p>R$ 29,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="os_sertoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Os Sertões</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/os_sertoes.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Os sertões é dividido em seções. A primeira parte, ''A terra'', são considerações técnicas e científicas a respeito do solo, do clima e do espaço geográfico do sertão baiano.A segunda parte, ''O homem'', traz características antropológicas a respeito do sertanejo, com todos os seus conflitos sociais, políticos e psicológicos. A última parte, ''A luta'' narra a Guerra de Canudos desde o início. A verossimilhança da obra é marcada pela rica apresentação de características do espaço, tempo, personagens, como Antônio Conselheiro, e contexto histórico pelo narrador-observador.
-                    </p>
-                    <p>R$ 34,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="senhora" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Senhora</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/senhora.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Obra da fase urbana de José de Alencar, considerado o mestre do romantismo o brasileiro, Senhora revela as convenções da sociedade burguesa carioca do século XIX. Pelos desencontros amorosos de Aurélia Camargo, Fernanda Seixas e Adelaide Amaral, o autor traça um painel da vida da corte e critica os costumes da época, como casamento por interesse e arrivismo social.
-                    </p>
-                    <p>R$ 29,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="triste_fim_de_policarpo_quaresma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Triste Fim de Policarpo Quaresma</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/triste_fim_de_policarpo_quaresma.webp">
-                    <br/>
-                    <br/>
-                    <p>
-                        Policarpo Quaresma ama o Brasil. Ama porque é a terra mais fértil do mundo, porque tem a fauna e a flora mais lindas e exuberantes, porque é a cultura mais rica, a melhor comida, em variedade e sabores, porque possui as mulheres mais belas e, segundo ele, até mesmo... os melhores governantes. Funcionário público, fluente em tupi, estudioso da cultura indígena e grande apreciador das modinhas de violão ― para ele, o único estilo de música verdadeiramente nacional ―, Policarpo, como Dom Quixote de La Mancha, enfrenta moinhos de vento para provar a todos o seu ponto de vista, bradar ao mundo o amor por sua musa, não a Srta. Dulcineia de Toboso, mas a mui amada pátria brasileira. Mas, afinal, que fim poderia ter a aventura de Policarpo? Repleto de personagens fortes e carismáticos, o romance de Lima Barreto é, ao mesmo tempo, um ensaio sobre o idealismo, uma crítica profunda, mas permeada de comicidade, da realidade brasileira do fim do século XIX e início do XX e um retrato das mudanças pelas quais o Brasil passava naquele momento, como o despertar do feminismo. Lindo, inteligente, comovente! Um clássico da literatura nacional.
-                    </p>
-                    <p>R$ 49,90</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="o_menino_maluquinho" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">O Menino Maluquinho</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/o_menino_maluquinho.jpeg">
-                    <br/>
-                    <br/>
-                    <p>
-                        Um menininho traquinas, diziam. Tinha macaquinhos no sótão, deitava e rolava, fazendo confusão. Um anjinho, um saci? Alegria da casa, liderava a garotada. Namorador, fazia versinhos, compunha canções, inventava brincadeiras. Era sabido, um amigão. “Menino Maluquinho”, diziam sorrindo as pessoas. Não era, não! Só mais tarde descobriram que tinha sido um garotinho muito amado e, por isso mesmo, muito feliz.
-                    </p>
-                    <p>R$ 59,90</p>                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="o_cao_sem_plumas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">O Cão Sem Plumas</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src = "images/livros/o_cao_sem_plumas.jpeg">
-                    <br/>
-                    <br/>
-                    <p>
-                        Neste volume estão reunidos os primeiros livros de João Cabral de Melo Neto, a começar por Pedra do sono, de 1942, até O cão sem plumas, de 1950. Considerado uma obra-prima desde que foi publicado, o poema alçou o escritor pernambucano ao patamar mais elevado da literatura brasileira, colocando-o ao lado de nomes fundamentais, como Carlos Drummond de Andrade e Manuel Bandeira.
-                    </p>
-                    <p>R$ 42,50</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Emprestimo</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <section class="rodape" id="rodape">
         <div class="divMap">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.
@@ -572,7 +99,6 @@
             <br>
             <br>
             <br>
-
         </div>
         <hr>
         <div>
@@ -615,8 +141,6 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/2.19.0/parse.min.js"></script>
-    <script src="busca_livros.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -627,3 +151,96 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 </body>
+
+<script>
+    const urlBase = "https://parseapi.back4app.com/classes/Livro";
+
+    let data = [];
+
+    const carregarLivros = async () => {
+        const response = await fetch(urlBase, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Parse-Application-Id": "awPjmitwQWHohlqbzx3EoHaZBYn4ZZsAl1L2ZEvO",
+                "X-Parse-REST-API-Key": "PoLLLNspCNEePQ7KYev4TNR9lMVJ8we60eeBOtQ9"
+            },
+        });
+        data = await response.json();
+    };
+
+    const compareLivros = async () => {
+        const input_busca = document.getElementById("search_string").value.toLowerCase();
+        let cont = 0;
+        let filteredLivros = [];
+
+        for (const livro of data.results) {
+            if (input_busca === livro.nome.toLowerCase() || input_busca === livro.autor.toLowerCase()) {
+                filteredLivros.push(livro);
+                cont = 1;
+            }
+        }
+
+        if (cont === 0) {
+            alert(`Livro não encontrado`);
+        } else {
+            exibirLivros(filteredLivros);
+        }
+    };
+
+    const exibirLivros = (livros) => {
+        const container = document.getElementById("livros-container");
+        container.innerHTML = ""; // Limpa o contêiner
+
+        livros.forEach(livro => {
+            const card = document.createElement("div");
+            card.className = "container mt-5";
+            card.innerHTML = `
+                <div class="card" style="width: 18rem;">
+                    <img src="${livro.foto.url}" class="card-img-top" alt="Imagem do livro ${livro.nome}">
+                    <div class="card-body">
+                        <h5 class="card-title">${livro.nome}</h5>
+                        <p class="card-text">R$ ${livro.preco}</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${livro.objectId}">
+                            Compra/Empréstimo
+                        </button>
+                    </div>
+                </div>
+                <div class="modal fade" id="${livro.objectId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">${livro.nome}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="${livro.foto}">
+                                <br/>
+                                <br/>
+                                <p>${livro.descricao}</p>
+                                <p>R$ ${livro.preco}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Empréstimo</button>
+                                <button type="button" class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    };
+
+    document.getElementById("search_button").addEventListener("click", async function (event) {
+        event.preventDefault(); // Previne o reload da página ao clicar no botão
+        await carregarLivros();
+        await compareLivros();
+    });
+
+    // Carrega os livros inicialmente
+    carregarLivros();
+</script>
+
+</html>
