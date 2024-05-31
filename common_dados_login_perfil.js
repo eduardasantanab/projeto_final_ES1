@@ -6,5 +6,6 @@ async function showDados(nome,sobrenome,cpf,cep,email) {
     document.getElementById("email").innerHTML = email
     document.getElementById("cep").innerHTML = cep
     document.getElementById("cpf").innerHTML = cpf
+    //
 
 }
