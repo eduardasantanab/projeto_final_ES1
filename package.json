@@ -4,7 +4,8 @@
   "description": "proj es1",
   "main": "busca_livros.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "echo 'Executando build do projeto...'"
   },
   "repository": {
     "type": "git",
