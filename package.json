@@ -4,9 +4,9 @@
   "description": "proj es1",
   "main": "busca_livros.js",
   "scripts": {
-    "test": "./run-tests.sh",
+    "test": "jest",
     "build": "echo 'Executando build do projeto...'",
-    "start": "busca_livros.js"                     
+  "start": "node busca_livros.js"                       
   },
   "repository": {
     "type": "git",
