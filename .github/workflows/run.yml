@@ -1,16 +1,10 @@
 name: run
 
-on:
-  push:
-      branches:
-            - main
+'on': push           
 jobs:
-  build:
+  my-jobs:
     runs-on: ubuntu-lastest
     steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
-          with:
-          node-version: 18.12.1
-          -run: home.html
+        - name: my-step
+          run: echo "oi"
        
