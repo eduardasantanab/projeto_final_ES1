@@ -18,7 +18,7 @@
     <article>
         <ul>
             <li class="my_dropdown"> 
-                <a href = "index.html" class="my_dropbtn">Home</a>
+                <a href = "home.html" class="my_dropbtn">Home</a>
             </li>
             <li class="my_dropdown">   
                 <a href="sobre_escola.html" class="my_dropbtn">Sobre a escola</a>
@@ -29,26 +29,26 @@
                     <a href="sobre_escola.html#rodape">contato</a>
                 </div>
             </li>
-
-
+      
+      
             <li class="my_dropdown">
                 <a href="sobre_biblioteca.html" class="my_dropbtn">Biblioteca</a>
-
+      
                 <div class="my_dropdown-content">
                     <a href="sobre_biblioteca.html">Sobre</a>
                     <a href="livros.html">Livros</a>
                 </div>
             </li>
-
-
+      
+      
             <li class="my_dropdown"> 
                 <a href="produtos.html" class="my_dropbtn">Produtos</a>
                 <div class="my_dropdown-content"> 
                     <a href="produtos.html" >Materiais</a>
                 </div>
             </li>
-
-
+      
+      
             <li class="my_dropdown"> 
                 <a href="servicos.html" class="my_dropbtn">Serviços</a>
                 <div class="my_dropdown-content"> 
@@ -56,11 +56,14 @@
                     <a href="servicos.html#aulas_particulares">Aulas particulares</a>
                 </div>
             </li> 
-
+      
             <li class="my_dropdown"> 
-                <a href="login.html" class="my_dropbtn">Login</a>
+                <a id = "login" class="my_dropbtn">Informações Pessoais</a>
+                <div class = "my_dropdown-content" style = "display: none;" id = "notas" >
+                  <a href = "notas_aluno.html">Notas</a>
+                </div>
             </li> 
-
+      
         </ul>
 
         <br/>
@@ -127,6 +130,55 @@
             window.location.href = "./login.html";
         }
     };
+
+    async function janela_informacoes_pessoais() {
+        // Recupera as informações do usuário do localStorage
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        if (usuario.tipo_conta == 'professor') {
+            window.location.href = "./perfil_professor.html";
+        } else {
+            // Usuário não está logado, redireciona para a página de login
+            window.location.href = "./perfil_aluno.html";
+        }
+    };
+
+
+    document.getElementById("login").addEventListener("click", async function () {
+        await janela_informacoes_pessoais();
+    });
+
+
+    async function mostrarOpcaoNotasSeAluno() {
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+    if (usuario && usuario.tipo_conta === 'aluno') {
+        document.getElementById("notas").style.display = "block";
+    }
+}
+
+async function ocultarOpcaoNotas() {
+    document.getElementById("notas").style.display = "none";
+}
+
+document.getElementById("login").addEventListener("click", async function () {
+    await janela_informacoes_pessoais();
+});
+
+
+document.getElementById("login").addEventListener("mouseover", async function () {
+    await mostrarOpcaoNotasSeAluno();
+});
+
+document.getElementById("login").addEventListener("mouseout", async function () {
+    await ocultarOpcaoNotas();
+});
+
+document.getElementById("notas").addEventListener("mouseover", async function () {
+    document.getElementById("notas").style.display = "block";
+});
+
+document.getElementById("notas").addEventListener("mouseout", async function () {
+    await ocultarOpcaoNotas();
+});
 </script>
 
 </html>

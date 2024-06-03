@@ -8,56 +8,11 @@
 
     <link rel="stylesheet" href="loginStyle.css">
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script src="common_dados_login_perfil.js"></script>
+
 </head>
 
 <body>
-
-    <ul>
-        <li class="my_dropdown">
-            <a href="index.html" class="my_dropbtn">Home</a>
-        </li>
-        <li class="my_dropdown">
-            <a href="sobre_escola.html" class="my_dropbtn">Sobre a escola</a>
-            <div class="my_dropdown-content">
-                <a href="sobre_escola.html#fundamentos">fundamentos</a>
-                <a href="sobre_escola.html#novidades">novidades</a>
-                <a href="sobre_escola.html#rodape">localização</a>
-                <a href="sobre_escola.html#rodape">contato</a>
-            </div>
-        </li>
-
-
-        <li class="my_dropdown">
-            <a href="sobre_biblioteca.html" class="my_dropbtn">Biblioteca</a>
-
-            <div class="my_dropdown-content">
-                <a href="sobre_biblioteca.html">Sobre</a>
-                <a href="livros.html">Livros</a>
-            </div>
-        </li>
-
-
-        <li class="my_dropdown">
-            <a href="produtos.html" class="my_dropbtn">Produtos</a>
-            <div class="my_dropdown-content">
-                <a href="produtos.html">Materiais</a>
-            </div>
-        </li>
-
-
-        <li class="my_dropdown">
-            <a href="servicos.html" class="my_dropbtn">Serviços</a>
-            <div class="my_dropdown-content">
-                <a href="servicos.html#cursos">Cursos</a>
-                <a href="servicos.html#aulas_particulares">Aulas particulares</a>
-            </div>
-        </li>
-
-        <li class="my_dropdown">
-            <a href="login.html" class="my_dropbtn">Login</a>
-        </li>
-
-    </ul>
 
 
     <img id="estudando" src="images/estudando.png" width="200" height="200">
@@ -190,6 +145,39 @@
     document.getElementById("criar_conta_btn").addEventListener("click", async function () {
         postUser();
     });
+
+
+    async function mostrarOpcaoNotasSeAluno() {
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+    if (usuario && usuario.tipo_conta === 'aluno') {
+        document.getElementById("notas").style.display = "block";
+    }
+}
+
+async function ocultarOpcaoNotas() {
+    document.getElementById("notas").style.display = "none";
+}
+
+document.getElementById("login").addEventListener("click", async function () {
+    await janela_informacoes_pessoais();
+});
+
+
+document.getElementById("login").addEventListener("mouseover", async function () {
+    await mostrarOpcaoNotasSeAluno();
+});
+
+document.getElementById("login").addEventListener("mouseout", async function () {
+    await ocultarOpcaoNotas();
+});
+
+document.getElementById("notas").addEventListener("mouseover", async function () {
+    document.getElementById("notas").style.display = "block";
+});
+
+document.getElementById("notas").addEventListener("mouseout", async function () {
+    await ocultarOpcaoNotas();
+});
 
 </script>
 
