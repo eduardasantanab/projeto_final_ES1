@@ -1,5 +1,5 @@
-describe('como usuário, eu gostaria de poder pesquisar livros por título', () => {
-  it('o usuário deve inserir nomes válidos e reais para pesquisar título do livro', () => {
+describe('Como usuário, eu gostaria de poder pesquisar livros por título', () => {
+  it('O usuário deve inserir nomes válidos e reais para pesquisar título do livro', () => {
     cy.visit('https://projeto-final-es-1.vercel.app/')
 
     cy.contains('Login Aluno')

@@ -1,5 +1,5 @@
-describe('como usuário, eu gostaria de poder pesquisar livros por nome do autor ', () => {
-  it('o usuário deve inserir nomes válidos e reais para pesquisar o autor do livro', () => {
+describe('Como usuário, eu gostaria de poder pesquisar livros por nome do autor ', () => {
+  it('O usuário deve inserir nomes válidos e reais para pesquisar o autor do livro', () => {
     cy.visit('https://projeto-final-es-1.vercel.app/')
 
     cy.contains('Login Aluno')
@@ -18,7 +18,7 @@ describe('como usuário, eu gostaria de poder pesquisar livros por nome do autor
     cy.get('input[type="search"]').type('machado de assis')
     cy.get('#search_button').click()
 
-    cy.get('#autor2').contains('Autor: Machado de Assis')
-    cy.get('#autor4').contains('Autor: Machado de Assis')
+    cy.get('#D8NR9yeFxU').get('#autor').contains('Autor: Machado de Assis')
+    cy.get('#6Bz3xw3zSF').get('#autor').contains('Autor: Machado de Assis')
   })
 })

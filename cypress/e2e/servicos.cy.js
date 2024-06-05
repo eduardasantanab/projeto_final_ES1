@@ -1,5 +1,5 @@
-describe('Como usuário, eu gostaria de poder visualizar os serviços disponíveis ', () => {
-  it('deve conter um botão de serviços no menu de navegação que direciona o usuário para descrições de serviços', () => {
+describe('Como usuário, eu gostaria de poder visualizar os serviços disponíveis', () => {
+  it('Deve conter um botão de serviços no menu de navegação que direciona o usuário para descrições de serviços', () => {
     cy.visit('https://projeto-final-es-1.vercel.app/')
 
     cy.contains('Login Aluno')

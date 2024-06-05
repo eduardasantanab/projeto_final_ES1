@@ -1,5 +1,5 @@
-describe('como professor, eu gostaria de poder visualizar meus dados pessoais no meu perfil', () => {
-it('o usuário deve conter um cadastro de professor com suas informações de login.', () => {
+describe('Como professor, eu gostaria de poder visualizar meus dados pessoais no meu perfil', () => {
+it('O usuário deve conter um cadastro de professor com suas informações de login.', () => {
   cy.visit('https://projeto-final-es-1.vercel.app/')
   cy.contains('Login Professor')
 
