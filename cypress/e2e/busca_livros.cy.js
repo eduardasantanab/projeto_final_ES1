@@ -15,6 +15,6 @@ describe('como usuário, eu gostaria de poder pesquisar livros por título', () 
     cy.get('input[type="search"]').type('senhora')
     cy.get('#search_button').click()
 
-//    cy.get('#card_title').should('exist').and('contain.text', 'Senhora')
+    cy.get('#card_title').should('exist').and('contain.text', 'Senhora')
      })
 })
