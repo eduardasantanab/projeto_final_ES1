@@ -18,7 +18,7 @@ describe('como usuário, eu gostaria de poder pesquisar livros por nome do autor
     cy.get('input[type="search"]').type('machado de assis')
     cy.get('#search_button').click()
 
-//    cy.get('#autor2').contains('Autor: Machado de Assis')
-//    cy.get('#autor4').contains('Autor: Machado de Assis')
+    cy.get('#autor2').contains('Autor: Machado de Assis')
+    cy.get('#autor4').contains('Autor: Machado de Assis')
   })
 })
