@@ -1,6 +1,6 @@
 describe('como usuário, eu gostaria de poder pesquisar livros por título', () => {
   it('o usuário deve inserir nomes válidos e reais para pesquisar título do livro', () => {
-    cy.visit('https://projeto-final-es-1.vercel.app/')
+    cy.visit('http://localhost:63342/projeto_final_ES1/index.html?_ijt=g63ug10cdfrccbk8h311mue57v&_ij_reload=RELOAD_ON_SAVE')
 
     cy.contains('Login Aluno')
 
@@ -8,12 +8,13 @@ describe('como usuário, eu gostaria de poder pesquisar livros por título', () 
     cy.get('input[type="password"]').type('321234')
     cy.get('#aluno_login_button').click()
 
-    cy.wait(1000);
 
     cy.contains('Biblioteca').should('be.visible')
     cy.contains('Livros').click({ force: true })
 
     cy.get('input[type="search"]').type('senhora')
     cy.get('#search_button').click()
-  })
+
+    cy.get('#card_title').should('exist').and('contain.text', 'Senhora')
+     })
 })

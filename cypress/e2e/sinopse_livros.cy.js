@@ -16,5 +16,9 @@ describe('como um usuário, eu gostaria de poder me informar sobre a sinopse dos
     cy.wait(1000);
 
     cy.contains('Compra/Emprestimo').click()
+
+    cy.get('#descricao').should(($p) => {
+      expect($p).to.not.be.empty;
+    });
   })
 })
