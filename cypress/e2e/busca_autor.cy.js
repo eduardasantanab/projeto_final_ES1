@@ -1,6 +1,6 @@
 describe('como usuário, eu gostaria de poder pesquisar livros por nome do autor ', () => {
   it('o usuário deve inserir nomes válidos e reais para pesquisar o autor do livro', () => {
-    cy.visit('http://127.0.0.1:5500/index.html')
+    cy.visit('https://projeto-final-es-1.vercel.app/')
 
     cy.contains('Login Aluno')
 
