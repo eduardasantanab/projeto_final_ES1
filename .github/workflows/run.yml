@@ -40,3 +40,9 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run --spec "cypress/e2e/**/*"
+
+      - name: Deploy to Vercel
+        if: success()  # só executa se o passo anterior for bem sucedido
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod  
