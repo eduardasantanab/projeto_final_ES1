@@ -6,6 +6,8 @@ describe('como usuário, eu gostaria de poder pesquisar livros por nome do autor
 
     cy.get('input[type="email"]').type('teste@email.com')
     cy.get('input[type="password"]').type('321234')
+    cy.wait(1000);
+
     cy.get('#aluno_login_button').click()
 
     cy.wait(1000);

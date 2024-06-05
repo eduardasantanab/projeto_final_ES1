@@ -1,4 +1,4 @@
-describe('como usuário, eu gostaria de poder pesquisar livros por título', () => {
+describe('como um usuário, eu gostaria de poder me informar sobre a sinopse dos livros ', () => {
   it('deve conter uma opção que redirecione o usuário para uma aba de detalhes do livro', () => {
     cy.visit('https://projeto-final-es-1.vercel.app/')
 
