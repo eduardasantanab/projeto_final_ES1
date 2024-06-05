@@ -15,7 +15,7 @@ describe('Como usuário, eu gostaria de poder pesquisar livros por nome do autor
     cy.contains('Biblioteca').should('be.visible')
     cy.contains('Livros').click({ force: true })
 
-    cy.get('input[type="search"]').type('clarice lispector')
+    cy.get('input[type="search"]').type('machado de assis')
     cy.get('#search_button').click()
 
     cy.get('#D8NR9yeFxU').get('#autor').contains('Autor: Machado de Assis')
