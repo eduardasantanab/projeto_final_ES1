@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress Tests and Deploy
 
 on:
   push:
@@ -41,8 +41,24 @@ jobs:
       - name: Run Cypress tests
         run: npx cypress run --spec "cypress/e2e/**/*"
 
+  deploy:
+    needs: cypress-run
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Deploy to Vercel
-        if: success()  # só executa se o passo anterior for bem sucedido
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: npx vercel --prod  
+        run: npx vercel --prod
