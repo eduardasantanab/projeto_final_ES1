@@ -57,7 +57,7 @@
             </li> 
       
             <li class="my_dropdown"> 
-                <a id="informacoes_pessoais" class="my_dropbtn">Informações Pessoais</a>
+                <a id="login" class="my_dropbtn">Informações Pessoais</a>
                 <div class = "my_dropdown-content" style = "display: none;" id = "notas" >
                   <a href = "notas_aluno.html" id="secao_notas">Notas</a>
                 </div>
@@ -270,16 +270,16 @@ async function ocultarOpcaoNotas() {
     document.getElementById("notas").style.display = "none";
 }
 
-document.getElementById("informacoes_pessoais").addEventListener("click", async function () {
+document.getElementById("login").addEventListener("click", async function () {
     await janela_informacoes_pessoais();
 });
 
 
-document.getElementById("informacoes_pessoais").addEventListener("mouseover", async function () {
+document.getElementById("login").addEventListener("mouseover", async function () {
     await mostrarOpcaoNotasSeAluno();
 });
 
-document.getElementById("informacoes_pessoais").addEventListener("mouseout", async function () {
+document.getElementById("login").addEventListener("mouseout", async function () {
     await ocultarOpcaoNotas();
 });
 

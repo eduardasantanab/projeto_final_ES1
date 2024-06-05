@@ -1,6 +1,6 @@
 describe('como um usuário, eu gostaria de poder me informar sobre a sinopse dos livros ', () => {
   it('deve conter uma opção que redirecione o usuário para uma aba de detalhes do livro', () => {
-    cy.visit('https://projeto-final-es-1.vercel.app/')
+    cy.visit('http://127.0.0.1:5500/index.html')
 
     cy.contains('Login Aluno')
 

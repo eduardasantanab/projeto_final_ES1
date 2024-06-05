@@ -1,6 +1,6 @@
 describe('Como usuário, eu gostaria de poder visualizar os serviços disponíveis ', () => {
   it('deve conter um botão de serviços no menu de navegação que direciona o usuário para descrições de serviços', () => {
-    cy.visit('https://projeto-final-es-1.vercel.app/')
+    cy.visit('http://127.0.0.1:5500/index.html')
 
     cy.contains('Login Aluno')
 
