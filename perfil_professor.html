@@ -144,17 +144,12 @@
         await janela_informacoes_pessoais();
     });
 
-
     async function mostrarOpcaoNotasSeAluno() {
     const usuario = JSON.parse(localStorage.getItem('usuario'));
     if (usuario && usuario.tipo_conta === 'aluno') {
         document.getElementById("notas").style.display = "block";
     }
 }
-
-<!--async function ocultarOpcaoNotas() {-->
-<!--    document.getElementById("notas").style.display = "none";-->
-<!--}-->
 
 document.getElementById("login").addEventListener("click", async function () {
     await janela_informacoes_pessoais();
@@ -165,17 +160,6 @@ document.getElementById("login").addEventListener("mouseover", async function ()
     await mostrarOpcaoNotasSeAluno();
 });
 
-<!--document.getElementById("login").addEventListener("mouseout", async function () {-->
-<!--    await ocultarOpcaoNotas();-->
-<!--});-->
-
-<!--document.getElementById("notas").addEventListener("mouseover", async function () {-->
-<!--    document.getElementById("notas").style.display = "block";-->
-<!--});-->
-
-<!--document.getElementById("notas").addEventListener("mouseout", async function () {-->
-<!--    await ocultarOpcaoNotas();-->
-<!--});-->
 </script>
 
 </html>
