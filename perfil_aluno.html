@@ -70,11 +70,11 @@
         <br/>
     </article>
 
-    <<div class="container rounded bg-white mb-5">
+    <div class="container rounded bg-white mb-5">
         <div class="row">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" width="150px" src="images/sobreEscola/professor-dando-aula2.jpeg">
+                    <img class="rounded-circle mt-5" width="150px" id = "foto_perfil">
                     <span class="font-weight-bold" id = "nome_sobrenome" ></span>
                     <span class="text-black-50" id = "email"></span>
                 </div>
@@ -122,7 +122,7 @@
         // Recupera as informações do usuário do localStorage
         const usuario = JSON.parse(localStorage.getItem('usuario'));
         if (usuario) {
-            showDados(usuario.nome, usuario.sobrenome, usuario.cpf, usuario.cep, usuario.email);
+            showDados(usuario.nome, usuario.sobrenome, usuario.cpf, usuario.cep, usuario.email,usuario.foto_perfil.url);
         } else {
             // Usuário não está logado, redireciona para a página de login
             window.location.href = "./index.html";

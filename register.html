@@ -82,6 +82,11 @@
                         <br>
                         <input type="password" id="password" name="password" placeholder="Senha" required>
                     </div>
+                    <div class="col-md-6">
+                        <label for="foto_perfil">Foto de Perfil:</label>
+                        <br>
+                        <input type="file" id="foto_perfil" name="foto_perfil">
+                    </div>
                 </div>
             </div>
 
@@ -104,6 +109,27 @@
 <script>
     const url = "https://parseapi.back4app.com/classes/Login"
 
+    Parse.initialize("awPjmitwQWHohlqbzx3EoHaZBYn4ZZsAl1L2ZEvO", "5aw3fHuJKq9PHPhHhZYwpasW9uCUV4R8gEGXwLQI");
+    Parse.serverURL = "https://parseapi.back4app.com/";
+
+
+    function readFileAsDataURL(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+    }
+
+    async function uploadProfilePicture(file) {
+        const name = file.name;
+        const base64 = await readFileAsDataURL(file);
+        const parseFile = new Parse.File(name, { base64: base64 });
+        await parseFile.save();
+        return parseFile;
+    }
+
     async function postUser() {
         const nome = document.getElementById("username").value
         const sobrenome = document.getElementById("sobrenome").value
@@ -112,6 +138,16 @@
         const email = document.getElementById("email").value
         const senha = document.getElementById("password").value
         const tipo_conta = document.getElementById("tipo").value
+        const foto_perfil_input = document.getElementById("foto_perfil").files[0];
+
+        let foto_perfil = null;
+
+        if (foto_perfil_input) {
+            foto_perfil = await uploadProfilePicture(foto_perfil_input);
+
+        }else{
+            alert('Insira uma foto')
+        }   
 
         try {
             const response = await fetch(url, {
@@ -129,7 +165,8 @@
                     cep : cep,
                     email : email, 
                     senha : senha, 
-                    tipo_conta : tipo_conta
+                    tipo_conta : tipo_conta,
+                    foto_perfil: foto_perfil.toJSON(),
                 }), // body data type must match "Content-Type" header
             });
 
