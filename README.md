@@ -33,7 +33,6 @@ As principais seções do site incluem:<br/>
 <img src="/arquivosReadme/diagrama_classes.jpg"/><br/><br/>
 
 ### 4. Modelo Relacional do Banco de Dados<br/><br/>
-<img src="/arquivosReadme/imagem_logico.png"/><br/><br/>
 
 ### 5. Screenshots do sistema
 
